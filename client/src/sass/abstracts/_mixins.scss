@@ -1,0 +1,77 @@
+@mixin autoComplete($style) {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    @if $style == black {
+      -webkit-text-fill-color: $color-grey-dark-4;
+    }
+
+    @if $style == white {
+      -webkit-text-fill-color: $color-grey-light-3;
+    }
+
+    box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin borderBottomRadius($value) {
+  border-bottom-left-radius: $value;
+  border-bottom-right-radius: $value;
+}
+
+@mixin borderTopRadius($value) {
+  border-top-left-radius: $value;
+  border-top-right-radius: $value;
+}
+
+// Media query manager
+/*
+Phone                   : 0px    to 600px;
+Tablet (portrait)       : 600px  to 900px;
+Tablet (landscape)      : 900px  to 1200px;
+Normal Style            : 1200px to 1800px;  
+Large Desktop           : 1800px ++;
+
+$breakpoint argument choices:
+- phone 
+- tab-port
+- tab-land
+- large-desk
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px; 
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content; // 600px
+    }
+  }
+
+  @if $breakpoint == tab_port {
+    @media (max-width: 56.25em) {
+      @content; // 900px
+    }
+  }
+
+  @if $breakpoint == tab_land {
+    @media (max-width: 75em) {
+      @content; // 1200px
+    }
+  }
+
+  @if $breakpoint == large_desk {
+    @media (min-width: 112.5em) {
+      @content; // 1800px
+    }
+  }
+}

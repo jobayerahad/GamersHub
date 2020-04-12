@@ -1,0 +1,5 @@
+{
+  "mongoURI": "<Your MongoURI>",
+  "jwtsecret": "<Your JWT Secret>",
+  "picPlaceholder": "<Your Default Placeholder Pic>"
+}

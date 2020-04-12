@@ -1,0 +1,61 @@
+.dropdown {
+  width: 15rem;
+  position: absolute;
+  top: 4rem;
+  right: -2rem;
+  background-color: $color-grey-light-1;
+  border: 1px solid $color-grey-light-4;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.2);
+  border-radius: 5px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    padding: 0.5rem 0;
+    transition: all.2s;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+      background: $color-grey-light-3;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    width: 100%;
+
+    // Change for the <button> element
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 1rem;
+  }
+
+  &__title {
+    color: $color-dracula-orchid;
+  }
+
+  &--show {
+    animation: showDropdown 0.4s ease-out forwards;
+  }
+
+  &--close {
+    animation: closeDropdown 0.4s ease-out forwards;
+  }
+}

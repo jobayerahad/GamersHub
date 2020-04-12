@@ -1,0 +1,165 @@
+.form {
+  &__login,
+  &__register {
+    padding-top: 2rem;
+
+    & > * {
+      margin-top: 1rem;
+    }
+  }
+
+  &__register__name {
+    display: flex;
+
+    & > *:first-child {
+      width: 70%;
+      margin-right: 1rem;
+    }
+  }
+
+  &__input {
+    position: relative;
+
+    &__field {
+      width: 100%;
+      background-color: inherit;
+      border: 1px solid #dfe6e9;
+      padding: 1rem;
+      padding-left: 3rem;
+      font-size: 1.5rem;
+      border-radius: 5px;
+    }
+
+    &__img {
+      position: absolute;
+      top: 1.1rem;
+      left: 1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      filter: invert(25%);
+    }
+  }
+
+  &__select {
+    position: relative;
+
+    & img {
+      position: absolute;
+      top: 1.1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      filter: invert(25%);
+    }
+
+    &__field {
+      color: $color-grey-dark-2;
+      width: 100%;
+      background-color: inherit;
+      border: 1px solid #dfe6e9;
+      padding: 0.65rem;
+      padding-left: 3rem;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: capitalize;
+    }
+
+    &__img {
+      top: 1.1rem;
+      left: 1rem;
+    }
+
+    &__arrow {
+      right: 1.5rem;
+      transition: 0.4s;
+
+      &--rotate {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__list {
+      position: absolute;
+      top: 5rem;
+      left: 0;
+      width: 100%;
+      background-color: $color-white;
+      box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.1);
+      border-radius: 5px;
+      max-height: 20rem;
+      overflow-y: auto;
+
+      transition: 0.4s;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+
+        &-track {
+          background-color: $color-grey-light-4;
+          border-radius: 5rem;
+        }
+
+        &-thumb {
+          background-color: $color-wet-asphalt;
+          border-radius: 5rem;
+        }
+      }
+
+      &--show {
+        animation: foldIn 0.4s ease-out forwards;
+      }
+
+      &--close {
+        animation: foldOut 0.4s ease-out forwards;
+      }
+    }
+
+    &__item {
+      font-size: 1.4rem;
+      transition: 0.2s;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid $color-grey-light-3;
+      cursor: pointer;
+      text-transform: capitalize;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        background-color: $color-grey-light-1;
+      }
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 20rem;
+    font-family: inherit;
+    background-color: inherit;
+    border: 1px solid #dfe6e9;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    resize: none;
+  }
+
+  &__checkbox {
+    @include flexCenter;
+
+    &__field {
+      margin-right: 1rem;
+    }
+  }
+
+  &__spaced {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+
+  &__container-of-two {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+}

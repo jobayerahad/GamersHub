@@ -1,0 +1,38 @@
+.not-found {
+  @include flexCenter;
+  flex-direction: column;
+  font-family: var(--font-primary);
+
+  &__container {
+    background: #eff3f6;
+    min-height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-family: var(--font-primary);
+  }
+
+  &__code {
+    color: $color-grey-light-4;
+    font-size: 25rem;
+    font-family: var(--font-tertiary-2);
+    margin-bottom: -10rem;
+
+    svg {
+      fill: $color-grey-light-4;
+    }
+  }
+
+  em {
+    color: $color-grey-dark-4;
+    font-size: 5rem;
+  }
+
+  p {
+    width: 50vw;
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font-secondary);
+  }
+}

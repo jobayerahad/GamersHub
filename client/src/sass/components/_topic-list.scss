@@ -1,0 +1,20 @@
+.topic-list {
+  &__control {
+    display: flex;
+
+    &__item {
+      padding: 0 0.5rem;
+      font-size: 1.8rem;
+      letter-spacing: 0.5px;
+
+      &:not(:last-child) {
+        margin-right: 1.5rem;
+      }
+
+      &--active {
+        font-weight: 700;
+        border-bottom: 1px solid $color-black-pearl;
+      }
+    }
+  }
+}

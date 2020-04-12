@@ -1,0 +1,58 @@
+.auth {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+
+  @include flexCenter;
+
+  &__container {
+    background-color: $color-grey-light-1;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+    padding: 2rem 2.5rem;
+    width: 50rem;
+
+    position: relative;
+    color: $color-black-pearl;
+  }
+
+  &__close-btn {
+    width: 1.2rem;
+    position: absolute;
+    right: 1rem;
+    top: 0rem;
+    cursor: pointer;
+  }
+
+  &__toggle {
+    display: flex;
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    width: 100%;
+
+    & > * {
+      background-color: #dfe6e9;
+      color: #636e72;
+      text-align: center;
+      flex-grow: 1;
+      cursor: pointer;
+    }
+
+    &--active {
+      background: none;
+      color: inherit;
+      border-top: 2px solid #487eb0;
+    }
+  }
+
+  &--show {
+    animation: zoomIn 0.4s ease-out forwards;
+  }
+
+  &--close {
+    animation: zoomOut 0.4s ease-out forwards;
+  }
+}
